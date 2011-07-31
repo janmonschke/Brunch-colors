@@ -1,0 +1,30 @@
+[
+  {
+    "from": "favicon.ico",
+    "to": "favicon.ico"
+  },
+  {
+    "from" : "images/*",
+    "to" : "images/*"
+  },
+  {
+    "from": "_view/*",
+    "to": "_view/*"
+  },
+  {
+    "from": "/",
+    "to": "index.html"
+  },
+  {
+    "from": "brunch/*",
+    "to": "brunch/*"
+  },
+  {
+    "from": "/brunch_colors",
+    "to": "/../../"
+  },
+  {
+    "from": "/brunch_colors/*",
+    "to": "/../../*"
+  }
+]

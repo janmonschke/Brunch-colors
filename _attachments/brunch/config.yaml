@@ -1,0 +1,9 @@
+dependencies:
+  - ConsoleDummy.js
+  - canvasfw.js
+  - underscore-1.1.6.min.js
+  - backbone-master.js
+  - backbone-couchdb.js
+
+
+  

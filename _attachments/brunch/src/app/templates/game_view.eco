@@ -1,0 +1,12 @@
+Player: <input type="text" id="player_name" value='<%= @player %>' class='name' />
+<% if @original_moves?: %>
+  <p>Highscore: <%= @original_moves %>
+  by <%= @original_player.substring(0, 20) %></p>
+<% end %>
+<ul id="controls"></ul>
+<div id="messagez"></div>
+<div id="canvas_wrapper"><canvas id="canvas" width="400" height="400" style="margin-top: 20px;"></canvas></div>
+<div id="ui">
+    <div id="menu"></div>
+		<div id="stats"></div>
+</div>

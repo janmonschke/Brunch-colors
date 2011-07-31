@@ -1,0 +1,14 @@
+<% if !@original_moves or (@original_moves > @moves_needed): %>
+  <p>
+    New Highscore for this field with <%= @moves_needed %> moves. <br />
+    Challenge your friends and send them this url: <input type="text" style="width: 350px; font-size: 8pt;" value='<%= @link %>' />  
+  </p>
+  <p>
+    Or directly post the link on your Facebook wall so that all your Facebook friends can try to beat your Highscore!
+    <div id="fb"></div>
+  </p>
+<% else: %>
+  <p>
+    You didn't score better than the previous player!
+  </p>
+<% end %>

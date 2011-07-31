@@ -1,0 +1,6 @@
+<p>
+  Brunch-Colors is a simple, addictive color-matching game. Learn how to play <a href="#!instructions">here</a> or start playing <a href="#!play/new">right now</a>. Don't forget to challenge your friends after finishing a field!
+</p>
+<p>
+  This game was written with <a href="http://brunchwithcoffee.org">brunch</a>, a client-side framework powered by components like CoffeeScript and Backbone.js. As a backend it uses CouchDB / couchapp.
+</p>

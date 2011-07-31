@@ -1,0 +1,39 @@
+html{margin:0;padding:0;border:0}
+body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,nav,section{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block}
+body{line-height:1.5;background:#fff}
+table{border-collapse:separate;border-spacing:0}
+caption,th,td{text-align:left;font-weight:normal;float:none}
+table,th,td{vertical-align:middle}
+blockquote:before,blockquote:after,q:before,q:after{content:""}
+blockquote,q{quotes:"" ""}
+a img{border:none}
+:focus{outline:0}
+body{font-family:"Droid Sans",arial,serif}
+h1{color:#999;text-align:center;font-size:30pt}
+h3{font-weight:bold}
+p{margin-bottom:20px;text-align:justify}
+input.name{color:#333;font-size:12pt;width:200px}
+table{border-collapse:collapse;text-align:left;margin:0 20px}
+thead{vertical-align:middle}
+th{font-size:16pt;padding:10px 8px;border-bottom:2px solid #333}
+tr{color:#777}
+trhover{color:#222}
+td{padding:9px 8px 0}
+li{list-style-type:none;display:inline}
+button{display:inline-block;line-height:1;padding:7px 10px;text-decoration:none;font-weight:bold;color:#fff;background-color:#3b5998;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;cursor:pointer}
+#wrapper{width:400px;margin:0 auto}
+#canvas_wrapper{margin:0 auto}
+#notification-view{position:fixed;left:10px;width:150px}
+.notification_element{color:#111;padding:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;border:1px solid #333;font-size:9pt}
+#nav{margin-bottom:10px}
+#nav ul{width:100%}
+#nav ul li a{padding:.3em;background-color:#333;color:#efefef;text-decoration:none}
+#nav ul li ahover{background-color:#efefef;color:#333}
+#controls{margin-bottom:100px}
+#controls li{display:block;float:left;width:80px;height:80px}
+#controls lihover{cursor:pointer}
+#loading{display:none}
+span.button{background-color:#aaa;padding:3px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+span.buttonhover{cursor:pointer;background-color:#999}
+#ads{position:fixed;right:0;top:0}

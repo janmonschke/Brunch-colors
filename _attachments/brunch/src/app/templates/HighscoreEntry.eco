@@ -1,0 +1,1 @@
+<td><%- @player.substring(0, 10) %></td><td><%- @moves_needed %></td><td><a href='#/play/<%= @_id %>'>Beat this one!</a></td>
