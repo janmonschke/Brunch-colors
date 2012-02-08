@@ -1,3 +1,7 @@
+## couchapp stuff
+
+- why the heck does it always forget about couchapp??? -> source ~/.profile 
+
 ## Todos
 - nicer notifications
 - add hoverstate for buttons
