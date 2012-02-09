@@ -2950,29 +2950,34 @@ function eachChildTag(elem,tagName,func){
   }
 }));
 (this.require.define({
-  "collections/games_collection": function(exports, require, module) {
+  "views/HighscoreEntry": function(exports, require, module) {
     (function() {
-  var Game,
-    __hasProp = Object.prototype.hasOwnProperty,
+  var __hasProp = Object.prototype.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  Game = require("models/game").Game;
+  exports.HighscoreEntry = (function(_super) {
 
-  exports.GamesCollection = (function(_super) {
+    __extends(HighscoreEntry, _super);
 
-    __extends(GamesCollection, _super);
-
-    function GamesCollection() {
-      GamesCollection.__super__.constructor.apply(this, arguments);
+    function HighscoreEntry() {
+      HighscoreEntry.__super__.constructor.apply(this, arguments);
     }
 
-    GamesCollection.prototype.model = Game;
+    HighscoreEntry.prototype.tagName = "tr";
 
-    GamesCollection.prototype.url = "/games";
+    HighscoreEntry.prototype.initialize = function() {
+      this.el = $(this.el);
+      return this.template = require("templates/HighscoreEntry");
+    };
 
-    return GamesCollection;
+    HighscoreEntry.prototype.render = function() {
+      this.el.html(this.template(this.model));
+      return this;
+    };
 
-  })(Backbone.Collection);
+    return HighscoreEntry;
+
+  })(Backbone.View);
 
 }).call(this);
 
@@ -3622,34 +3627,29 @@ function eachChildTag(elem,tagName,func){
   }
 }));
 (this.require.define({
-  "views/HighscoreEntry": function(exports, require, module) {
+  "collections/games_collection": function(exports, require, module) {
     (function() {
-  var __hasProp = Object.prototype.hasOwnProperty,
+  var Game,
+    __hasProp = Object.prototype.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  exports.HighscoreEntry = (function(_super) {
+  Game = require("models/game").Game;
 
-    __extends(HighscoreEntry, _super);
+  exports.GamesCollection = (function(_super) {
 
-    function HighscoreEntry() {
-      HighscoreEntry.__super__.constructor.apply(this, arguments);
+    __extends(GamesCollection, _super);
+
+    function GamesCollection() {
+      GamesCollection.__super__.constructor.apply(this, arguments);
     }
 
-    HighscoreEntry.prototype.tagName = "tr";
+    GamesCollection.prototype.model = Game;
 
-    HighscoreEntry.prototype.initialize = function() {
-      this.el = $(this.el);
-      return this.template = require("templates/HighscoreEntry");
-    };
+    GamesCollection.prototype.url = "/games";
 
-    HighscoreEntry.prototype.render = function() {
-      this.el.html(this.template(this.model));
-      return this;
-    };
+    return GamesCollection;
 
-    return HighscoreEntry;
-
-  })(Backbone.View);
+  })(Backbone.Collection);
 
 }).call(this);
 

@@ -30,7 +30,7 @@ button{display:inline-block;line-height:1;padding:7px 10px;text-decoration:none;
 #nav{width:100%;background:#666;margin:0 auto;text-align:center;margin-bottom:10px}
 #nav ul{width:100%}
 #nav ul li a{padding:.4em;background-color:#333;color:#efefef;text-decoration:none}
-#nav ul li a:hover{background-color:#efefef;color:#333}
+#nav ul li a:hover{background-color:#fff;color:#333}
 #controls li{display:block;float:left;width:64px;height:64px}
 #controls li:hover{cursor:pointer}
 #loading{display:none;margin:0 auto;text-align:center}
