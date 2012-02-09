@@ -19,8 +19,3 @@ class exports.Game extends Backbone.Model
       @set "moves_needed" : moves
     else
       @trigger "game_over"
-  
-  validate : ->                                          
-    # assuming that a game takes at least 10 seconds
-    if (new Date().getTime() - @get "created_at") < 10000
-      return "Were you really that fast?"

@@ -52,7 +52,7 @@ class exports.MainController extends Backbone.Router
       success : (resp) ->
         game = new Game()
         game.id = resp.uuids[0]
-        game.set("_id" : game.id)
+        game.set  "_id" : game.id
         app.collections.games.add game, silent : true
         that.play(game.id)
       error : ->
