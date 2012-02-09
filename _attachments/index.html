@@ -5,10 +5,10 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="brunch/build/web/css/main.css" type="text/css">
+    <link rel="stylesheet" href="brunch/build/styles/app.css" type="text/css">
     <script src="/_utils/script/jquery.js"></script>
     <script src="/_utils/script/jquery.couch.js"></script>
-    <script src="brunch/build/web/js/app.js" type="text/javascript"></script>
+    <script src="brunch/build/scripts/app.js" type="text/javascript"></script>
     <script type="text/javascript">
     /* <![CDATA[ */
         (function() {
@@ -43,7 +43,7 @@
       <div id="fb-root"></div>
       <script src="https://connect.facebook.net/en_US/all.js"></script>
       <script>
-        if(FB)
+        if(window.FB != undefined)
           FB.init({
             appId  : '181770998533282',
             status : true, // check login status
@@ -52,7 +52,7 @@
       
       </script>
       <script type="text/javascript">
-        if (FB)
+        if (window.FB != undefined)
           if (FB.Canvas)
             FB.Canvas.setAutoResize();
       </script>
@@ -98,6 +98,6 @@
       })();
 
     </script>
-    <script type="text/javascript" src="http://metaautomat.de/endpoint/getcode/cf39806e78946300eac03e9d355eccfb858a7cf5"></script>
+    <!--script type="text/javascript" src="http://metaautomat.de/endpoint/getcode/cf39806e78946300eac03e9d355eccfb858a7cf5"></script-->
   </body>
 </html>
