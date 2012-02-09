@@ -2550,6 +2550,72 @@ function eachChildTag(elem,tagName,func){
   }
 }));
 (this.require.define({
+  "templates/notification_element": function(exports, require, module) {
+    module.exports = function (__obj) {
+  if (!__obj) __obj = {};
+  var __out = [], __capture = function(callback) {
+    var out = __out, result;
+    __out = [];
+    callback.call(this);
+    result = __out.join('');
+    __out = out;
+    return __safe(result);
+  }, __sanitize = function(value) {
+    if (value && value.ecoSafe) {
+      return value;
+    } else if (typeof value !== 'undefined' && value != null) {
+      return __escape(value);
+    } else {
+      return '';
+    }
+  }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
+  __safe = __obj.safe = function(value) {
+    if (value && value.ecoSafe) {
+      return value;
+    } else {
+      if (!(typeof value !== 'undefined' && value != null)) value = '';
+      var result = new String(value);
+      result.ecoSafe = true;
+      return result;
+    }
+  };
+  if (!__escape) {
+    __escape = __obj.escape = function(value) {
+      return ('' + value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    };
+  }
+  (function() {
+    (function() {
+    
+      __out.push('<span>New highscore by ');
+    
+      __out.push(__sanitize(this.original_player.substring(0, 20)));
+    
+      __out.push('! ');
+    
+      __out.push(__sanitize(this.moves_needed));
+    
+      __out.push(' moves needed.\n');
+    
+      if (this.id != null) {
+        __out.push('\n  <a href="#/play/');
+        __out.push(__sanitize(this.id));
+        __out.push('">Beat the highscore now!</a> </span>');
+      }
+    
+    }).call(this);
+    
+  }).call(__obj);
+  __obj.safe = __objSafe, __obj.escape = __escape;
+  return __out.join('');
+}
+  }
+}));
+(this.require.define({
   "views/game_view": function(exports, require, module) {
     (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -2581,6 +2647,7 @@ function eachChildTag(elem,tagName,func){
       var vals;
       vals = this.model.toJSON();
       vals.original_moves = this.original_moves;
+      vals.player = vals.player || app.configs.player || "unnamed";
       this.el.html(this.template(vals));
       $('#player_name').blur(this.update_name);
       return this.legacy();
@@ -2875,40 +2942,6 @@ function eachChildTag(elem,tagName,func){
     };
 
     return GameView;
-
-  })(Backbone.View);
-
-}).call(this);
-
-  }
-}));
-(this.require.define({
-  "views/HighscoreEntry": function(exports, require, module) {
-    (function() {
-  var __hasProp = Object.prototype.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
-
-  exports.HighscoreEntry = (function(_super) {
-
-    __extends(HighscoreEntry, _super);
-
-    function HighscoreEntry() {
-      HighscoreEntry.__super__.constructor.apply(this, arguments);
-    }
-
-    HighscoreEntry.prototype.tagName = "tr";
-
-    HighscoreEntry.prototype.initialize = function() {
-      this.el = $(this.el);
-      return this.template = require("templates/HighscoreEntry");
-    };
-
-    HighscoreEntry.prototype.render = function() {
-      this.el.html(this.template(this.model));
-      return this;
-    };
-
-    return HighscoreEntry;
 
   })(Backbone.View);
 
@@ -3451,6 +3484,12 @@ function eachChildTag(elem,tagName,func){
       }
     };
 
+    Game.prototype.validate = function() {
+      if ((new Date().getTime() - this.get("created_at")) < 10000) {
+        return "Were you really that fast?";
+      }
+    };
+
     return Game;
 
   })(Backbone.Model);
@@ -3586,68 +3625,36 @@ function eachChildTag(elem,tagName,func){
   }
 }));
 (this.require.define({
-  "templates/notification_element": function(exports, require, module) {
-    module.exports = function (__obj) {
-  if (!__obj) __obj = {};
-  var __out = [], __capture = function(callback) {
-    var out = __out, result;
-    __out = [];
-    callback.call(this);
-    result = __out.join('');
-    __out = out;
-    return __safe(result);
-  }, __sanitize = function(value) {
-    if (value && value.ecoSafe) {
-      return value;
-    } else if (typeof value !== 'undefined' && value != null) {
-      return __escape(value);
-    } else {
-      return '';
-    }
-  }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
-  __safe = __obj.safe = function(value) {
-    if (value && value.ecoSafe) {
-      return value;
-    } else {
-      if (!(typeof value !== 'undefined' && value != null)) value = '';
-      var result = new String(value);
-      result.ecoSafe = true;
-      return result;
-    }
-  };
-  if (!__escape) {
-    __escape = __obj.escape = function(value) {
-      return ('' + value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    };
-  }
-  (function() {
+  "views/HighscoreEntry": function(exports, require, module) {
     (function() {
-    
-      __out.push('<span>New highscore by ');
-    
-      __out.push(__sanitize(this.original_player.substring(0, 20)));
-    
-      __out.push('! ');
-    
-      __out.push(__sanitize(this.moves_needed));
-    
-      __out.push(' moves needed.\n');
-    
-      if (this.id != null) {
-        __out.push('\n  <a href="#/play/');
-        __out.push(__sanitize(this.id));
-        __out.push('">Beat the highscore now!</a> </span>');
-      }
-    
-    }).call(this);
-    
-  }).call(__obj);
-  __obj.safe = __objSafe, __obj.escape = __escape;
-  return __out.join('');
-}
+  var __hasProp = Object.prototype.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
+
+  exports.HighscoreEntry = (function(_super) {
+
+    __extends(HighscoreEntry, _super);
+
+    function HighscoreEntry() {
+      HighscoreEntry.__super__.constructor.apply(this, arguments);
+    }
+
+    HighscoreEntry.prototype.tagName = "tr";
+
+    HighscoreEntry.prototype.initialize = function() {
+      this.el = $(this.el);
+      return this.template = require("templates/HighscoreEntry");
+    };
+
+    HighscoreEntry.prototype.render = function() {
+      this.el.html(this.template(this.model));
+      return this;
+    };
+
+    return HighscoreEntry;
+
+  })(Backbone.View);
+
+}).call(this);
+
   }
 }));

@@ -9,6 +9,7 @@ class exports.GameView extends Backbone.View
   render : ->
     vals = @model.toJSON()
     vals.original_moves = @original_moves
+    vals.player = vals.player || app.configs.player || "unnamed" 
     @el.html(@template(vals))
     $('#player_name').blur @update_name    
     @legacy()
