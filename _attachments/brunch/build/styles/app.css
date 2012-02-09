@@ -26,7 +26,7 @@ button{display:inline-block;line-height:1;padding:7px 10px;text-decoration:none;
 #header h1{padding-left:90px;padding-top:19px}
 #wrapper,#canvas_wrapper{margin:0 auto}
 #notification-view{position:fixed;left:10px;width:150px}
-.notification_element{color:#111;padding:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;border:1px solid #333;font-size:9pt}
+.notification_element{color:#111;background:#efefef;padding:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;border:1px solid #333;font-size:9pt}
 #nav{width:100%;background:#666;margin:0 auto;text-align:center;margin-bottom:10px}
 #nav ul{width:100%}
 #nav ul li a{padding:.4em;background-color:#333;color:#efefef;text-decoration:none}
