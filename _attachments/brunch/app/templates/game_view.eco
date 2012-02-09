@@ -5,7 +5,7 @@ Player: <input type="text" id="player_name" value='<%= @player %>' class='name' 
 <% end %>
 <ul id="controls"></ul>
 <div id="messagez"></div>
-<div id="canvas_wrapper"><canvas id="canvas" width="400" height="400" style="margin-top: 20px;"></canvas></div>
+<div id="canvas_wrapper"><canvas id="canvas" width="320" height="320" style="margin-top: 20px;"></canvas></div>
 <div id="ui">
     <div id="menu"></div>
 		<div id="stats"></div>

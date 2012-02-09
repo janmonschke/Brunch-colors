@@ -2054,41 +2054,7 @@
   };
 
 }).call(this);
-/** returns the element with the given id */
-function id(_id){
-    return document.getElementById(_id);
-};
-/** adds an eventlistener to the given element */
-function event(name,elem,func){
-    elem.addEventListener(name,func,false);
-};
-/** click on desktop and touchend on supported mobile*/
-function action(elem,func){
-    var ua = navigator.userAgent.toLowerCase();
-    if(ua.indexOf("iphone") != -1 || ua.indexOf("ipod") != -1 || ua.indexOf("ipad") != -1 || ua.indexOf("android") != -1)
-        event("touchend",elem,func);
-    else
-        event("click",elem,func);
-};
-/** sets the inner html of the given element */
-function html(elem,html){
-    elem.innerHTML = html;
-};
-function hide(elem){
-	elem.style.display = "none";
-};
-function show(elem){
-	elem.style.display = "block";
-};
-/** do something over all the elements in the collection*/
-function each(collection,func){
-    for (var i=0; i < collection.length; i++)
-        func(collection[i],i);
-};
-/** calls the function for each child elem with elem and index as params*/
-function eachChildTag(elem,tagName,func){
-    each(elem.getElementsByTagName(tagName),func);
-};(function() {
+(function() {
   /*
   (c) 2011 Jan Monschke
   v1.0
@@ -2329,6 +2295,40 @@ var canvasR = {
     "alpha" : function(_alpha){
         this.context.globalAlpha = _alpha;
     }
+};/** returns the element with the given id */
+function id(_id){
+    return document.getElementById(_id);
+};
+/** adds an eventlistener to the given element */
+function event(name,elem,func){
+    elem.addEventListener(name,func,false);
+};
+/** click on desktop and touchend on supported mobile*/
+function action(elem,func){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.indexOf("iphone") != -1 || ua.indexOf("ipod") != -1 || ua.indexOf("ipad") != -1 || ua.indexOf("android") != -1)
+        event("touchend",elem,func);
+    else
+        event("click",elem,func);
+};
+/** sets the inner html of the given element */
+function html(elem,html){
+    elem.innerHTML = html;
+};
+function hide(elem){
+	elem.style.display = "none";
+};
+function show(elem){
+	elem.style.display = "block";
+};
+/** do something over all the elements in the collection*/
+function each(collection,func){
+    for (var i=0; i < collection.length; i++)
+        func(collection[i],i);
+};
+/** calls the function for each child elem with elem and index as params*/
+function eachChildTag(elem,tagName,func){
+    each(elem.getElementsByTagName(tagName),func);
 };(this.require.define({
   "templates/HighscoreEntry": function(exports, require, module) {
     module.exports = function (__obj) {
@@ -2383,7 +2383,7 @@ var canvasR = {
     
       __out.push(__sanitize(this._id));
     
-      __out.push('\'>Beat this one!</a></td>');
+      __out.push('\'>Beat it!</a></td>');
     
     }).call(this);
     
@@ -2487,7 +2487,7 @@ var canvasR = {
   (function() {
     (function() {
     
-      __out.push('<p>\n  Brunch-Colors is a simple, addictive color-matching game. Learn how to play <a href="#!instructions">here</a> or start playing <a href="#!play/new">right now</a>. Don\'t forget to challenge your friends after finishing a field!\n</p>\n<p>\n  This game was written with <a href="http://brunchwithcoffee.org">brunch</a>, a client-side framework powered by components like CoffeeScript and Backbone.js. As a backend it uses CouchDB / couchapp.\n</p>');
+      __out.push('<p>\n  Brunch-Colors is a simple, addictive color-matching game. Learn how to play <a href="#/instructions">here</a> or start playing <a href="#/play/new">right now</a>. Don\'t forget to challenge your friends after finishing a field!\n</p>\n<p>\n  This game was written with <a href="http://brunchwithcoffee.org">brunch</a>, a client-side framework powered by components like CoffeeScript and Backbone.js. As a backend it uses CouchDB / couchapp.\n</p>');
     
     }).call(this);
     
@@ -3318,6 +3318,9 @@ var canvasR = {
           return _gaq.push(['_trackPageview', msg.replace(/route:/, '')]);
         }
       });
+      setTimeout(function() {
+        return window.scrollTo(0, 1);
+      }, 100);
       this.init_loading_view();
       this.init_notifications();
     }
@@ -3548,7 +3551,7 @@ var canvasR = {
         __out.push('</p>\n');
       }
     
-      __out.push('\n<ul id="controls"></ul>\n<div id="messagez"></div>\n<div id="canvas_wrapper"><canvas id="canvas" width="400" height="400" style="margin-top: 20px;"></canvas></div>\n<div id="ui">\n    <div id="menu"></div>\n\t\t<div id="stats"></div>\n</div>');
+      __out.push('\n<ul id="controls"></ul>\n<div id="messagez"></div>\n<div id="canvas_wrapper"><canvas id="canvas" width="320" height="320" style="margin-top: 20px;"></canvas></div>\n<div id="ui">\n    <div id="menu"></div>\n\t\t<div id="stats"></div>\n</div>');
     
     }).call(this);
     

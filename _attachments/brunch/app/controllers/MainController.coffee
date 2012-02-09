@@ -29,6 +29,11 @@ class exports.MainController extends Backbone.Router
     @bind "all", (msg) ->
       if _gaq?
         _gaq.push ['_trackPageview', msg.replace(/route:/,'')]
+    
+    # hide address bar in iOS
+    setTimeout ->
+      window.scrollTo 0, 1
+    , 100
         
     # load ads if not in a iframe (FB)
     
