@@ -111,7 +111,7 @@ class exports.GameView extends Backbone.View
     		    that.model.set({"moves_needed" : cb.users[cb.activeUser].steps});
     		    cb.ui.update();
     		}else{
-    		    console.log("Game is over");
+    		    //console.log("Game is over");
     		}
     	},
     	recalcField : function(_newColor,_by){
@@ -193,7 +193,7 @@ class exports.GameView extends Backbone.View
     	update : function(){
     		displayField(cb.field.colors);
     		var act = cb.users[cb.activeUser];
-    		console.log("Steps count: " + act.steps + "Percentage: " + act.fieldPercentage);
+    		//console.log("Steps count: " + act.steps + "Percentage: " + act.fieldPercentage);
         if(act.fieldPercentage == 100){
           this.model.set({ "field" : cb.field });
           this.model.trigger("gameover");
